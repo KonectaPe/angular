@@ -1,0 +1,68 @@
+<div
+  class="mx-auto mt-4 max-w-4xl rounded-xl bg-gradient-to-br from-slate-900 to-slate-800 p-4 text-white shadow-2xl sm:p-10"
+>
+  <h1
+    class="mb-6 bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-center text-4xl font-bold text-transparent sm:text-5xl"
+  >
+    Verifica tu certificado
+  </h1>
+  <p
+    class="mx-auto mb-4 max-w-2xl text-justify text-sm text-slate-300 sm:text-base"
+  >
+    Verifica la autenticidad de tu certificado ingresando tu DNI, nombres o
+    código de certificación proporcionado al obtenerlo. Nos aseguramos de
+    proteger tu privacidad y la confidencialidad de tus datos.
+  </p>
+  <div
+    class="scrollbar-hide flex space-x-4 overflow-x-auto py-2 md:justify-center"
+  >
+    @for (searchType of searchTypes; track searchType.id) {
+      <button
+        class="flex-shrink-0 transform overflow-hidden whitespace-nowrap p-2"
+        [ngClass]="{
+          'bg-gradient-to-r from-emerald-500 to-blue-500':
+            searchType.type === searchTypeSelected,
+          'bg-slate-700 hover:bg-slate-600':
+            searchType.type !== searchTypeSelected,
+        }"
+        (click)="setSearchType(searchType.type)"
+      >
+        <span class="relative z-10">Buscar por {{ searchType.type }}</span>
+        <span
+          class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-blue-500 transition-transform duration-300 ease-in-out"
+          [ngClass]="{
+            'translate-y-0': searchType.type === searchTypeSelected,
+            'translate-y-full': searchType.type !== searchTypeSelected,
+          }"
+        ></span>
+      </button>
+    }
+  </div>
+  <div class="mb-8 mt-2 flex flex-col gap-4 sm:flex-row">
+    <input
+      type="text"
+      placeholder="Buscar por {{ searchTypeSelected }}"
+      class="w-full rounded-lg border-slate-700 bg-slate-800 py-3 pl-10 pr-4 text-white transition-all duration-300 ease-in-out focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+    />
+    <button
+      class="w-full rounded-lg bg-gradient-to-r from-emerald-500 to-blue-500 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-300 ease-in-out hover:from-emerald-400 hover:to-blue-400 hover:shadow-xl focus:ring-emerald-500 sm:w-auto"
+    >
+      Buscar
+    </button>
+  </div>
+  <div
+    class="mx-auto grid max-w-3xl grid-cols-2 justify-items-center gap-6 sm:grid-cols-4"
+  >
+    @for (organization of organizations; track organization.id) {
+      <div
+        class="transform cursor-pointer rounded-lg bg-slate-800 p-4 shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+      >
+        <img
+          src="{{ organization.logo }}"
+          alt="{{ organization.id }}"
+          class="mx-auto w-32 object-contain"
+        />
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,144 @@
+<nav class="left-0 top-0 z-50 w-full shadow-md md:pt-4 dark:bg-gray-900">
+  <div class="mx-auto max-w-5xl sm:px-6 lg:px-8">
+    <div class="flex flex-wrap items-center justify-between md:justify-center">
+      <!-- Logo -->
+      <div class="flex flex-shrink-0 md:hidden">
+        <a href="" class="text-2xl font-bold tracking-wide text-white"
+          >Ecomas</a
+        >
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden space-x-8 text-lg md:flex">
+        <li>
+          <a
+            href="#inicio"
+            class="text-white transition duration-200 hover:text-blue-400 hover:underline"
+            >Inicio</a
+          >
+        </li>
+        <li>
+          <a
+            href="#projectos"
+            class="text-white transition duration-200 hover:text-blue-400 hover:underline"
+            >Diplomados</a
+          >
+        </li>
+        <li>
+          <a
+            href="certificados"
+            class="text-white transition duration-200 hover:text-blue-400 hover:underline"
+            >Certificados</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="text-white transition duration-200 hover:text-blue-400 hover:underline"
+            >Contáctanos</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="text-white transition duration-200 hover:text-blue-400 hover:underline"
+            >Nuestras redes</a
+          >
+        </li>
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex items-center md:hidden">
+        <button
+          class="text-white hover:text-blue-600 focus:outline-none"
+          (click)="toggleDrawer()"
+        >
+          <!-- Hamburger Icon -->
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile Drawer -->
+  <div
+    class="fixed inset-0 z-40 flex transform justify-start bg-gray-800 bg-opacity-75 transition-transform duration-300 md:hidden"
+    [ngClass]="{
+      'translate-x-0': isDrawerOpen,
+      '-translate-x-full': !isDrawerOpen,
+    }"
+  >
+    <div
+      class="relative w-64 space-y-4 bg-white p-4 shadow-lg dark:bg-gray-900"
+    >
+      <button
+        class="absolute right-4 top-4 text-gray-800 focus:outline-none dark:text-white"
+        (click)="toggleDrawer()"
+      >
+        <!-- Close Icon -->
+        <svg
+          class="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+
+      <li>
+        <a
+          href="#"
+          class="block text-gray-800 transition duration-200 hover:text-blue-400 dark:text-gray-300"
+          >Inicio</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block text-gray-800 transition duration-200 hover:text-blue-400 dark:text-gray-300"
+          >Diplomados</a
+        >
+      </li>
+      <li>
+        <a
+          href="certificados"
+          class="block text-gray-800 transition duration-200 hover:text-blue-400 dark:text-gray-300"
+          >Certificados</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block text-gray-800 transition duration-200 hover:text-blue-400 dark:text-gray-300"
+          >Contáctanos</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block text-gray-800 transition duration-200 hover:text-blue-400 dark:text-gray-300"
+          >Nuestras redes</a
+        >
+      </li>
+    </div>
+  </div>
+</nav>

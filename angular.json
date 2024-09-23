@@ -24,7 +24,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/_routes.json"
             ],
             "styles": [
               "src/styles.css"
@@ -97,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "89af1a06-fcf6-41f4-aa02-9c61ea3d2470"
   }
 }
